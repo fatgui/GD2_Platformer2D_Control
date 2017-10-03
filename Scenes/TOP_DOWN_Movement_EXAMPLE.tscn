@@ -2,9 +2,9 @@
 
 [ext_resource path="res://Scripts/TestLevel_0.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/TestTileset/TestTileset.xml" type="TileSet" id=2]
-[ext_resource path="res://Prefabs/Player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Prefabs/Player/TopDownPlayer.tscn" type="PackedScene" id=3]
 
-[node name="Node" type="Node"]
+[node name="Node" type="Node2D"]
 
 script/script = ExtResource( 1 )
 
@@ -28,6 +28,7 @@ tile_data = IntArray( 65535, 14, 27, 14, 131071, 14, 65563, 14, 196607, 14, 1310
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 207, 115 )
+transform/pos = Vector2( 310, 150 )
 
 
+[editable path="Player"]
