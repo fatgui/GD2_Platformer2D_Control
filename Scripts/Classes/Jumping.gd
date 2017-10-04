@@ -19,23 +19,23 @@ func SetGravity(new_gravity):
 	world_gravity = new_gravity
 	
 	
-func Apply(delta):
+func Apply(delta, velocity):
 	
 	# add gravity
 	velocity +=  world_gravity * delta
 	
-	_jump_timer += delta 
-	
-	# Is on ground ?
-	if(object.is_move_and_slide_on_floor()): _jump_timer = 0
-	
-	# is jump anabled by tresjold time ?
-	_is_enabled = _jump_timer < jumpTreshold 
-	
+#	_jump_timer += delta 
+#	
+#	# Is on ground ?
+#	if(object.is_move_and_slide_on_floor()): _jump_timer = 0
+#	
+#	# is jump anabled by tresjold time ?
+#	_is_enabled = _jump_timer < jumpTreshold 
+#	
 	# Apply jump force on key pressed when is enabled
 	if( key and _is_enabled):
 		velocity.y -= jumpForce
 		_jump_timer = jumpTreshold 
 		
-	velocity = object.move_and_slide(velocity)
+	object.move_and_slide(velocity)
 		

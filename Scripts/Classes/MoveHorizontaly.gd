@@ -10,6 +10,7 @@ var velocity = Vector2()
 # Movement Constants
 const FLOOR_NORMAL = Vector2(0, -1)
 const SLOPE_FRICTION = 20
+const MIN_SPEED = 0.2
 
 # COnstructor
 func _init(obj,mKeyLeft,mKeyRight,object_speed, object_acceleration):
