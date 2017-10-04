@@ -30,4 +30,6 @@ func DoMove(delta):
 	
 	object.move_and_slide(velocity,Vector2(0, -1),20) 
 	
+func GetVelocity():
+	return velocity	
 	

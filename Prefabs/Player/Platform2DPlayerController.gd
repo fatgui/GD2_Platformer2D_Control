@@ -39,5 +39,5 @@ func _fixed_process(delta):
 	# realize horizontal movement
 	movement_H.DoMove(delta)	
 	
-	# realize vertical movement
+	# realize vertical movement - Jump + Gravity
 	
