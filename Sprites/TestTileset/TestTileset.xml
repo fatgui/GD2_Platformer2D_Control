@@ -91,17 +91,17 @@
 		<vector2_array name="points" len="4"> 			-8, -8, 8, -8, 8, 8, -8, 8 </vector2_array>
 
 	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://42">
+	<resource type="ConvexPolygonShape2D" path="local://25">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2_array name="points" len="4"> 			-8, -8, 8, -8, 8, 5, -8, -1 </vector2_array>
 
 	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://43">
+	<resource type="ConvexPolygonShape2D" path="local://26">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2_array name="points" len="4"> 			-8, -8, 8, -8, 8, 5, -8, 5 </vector2_array>
 
 	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://44">
+	<resource type="ConvexPolygonShape2D" path="local://27">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2_array name="points" len="4"> 			-8, -8, 8, -8, 8, -1, -8, 5 </vector2_array>
 
@@ -564,7 +564,7 @@
 		<resource name="27/occluder"></resource>		<vector2 name="27/navigation_offset"> 8, 8 </vector2>
 		<resource name="27/navigation"></resource>		<vector2 name="27/shape_offset"> 8, 8 </vector2>
 		<array name="27/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://42">  </resource>
+			<resource  resource_type="Shape2D" path="local://25">  </resource>
 		</array>
 		<vector2 name="27/one_way_collision_direction"> 0, 0 </vector2>
 		<real name="27/one_way_collision_max_depth"> 0 </real>
@@ -577,7 +577,7 @@
 		<resource name="28/occluder"></resource>		<vector2 name="28/navigation_offset"> 8, 8 </vector2>
 		<resource name="28/navigation"></resource>		<vector2 name="28/shape_offset"> 8, 8 </vector2>
 		<array name="28/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://43">  </resource>
+			<resource  resource_type="Shape2D" path="local://26">  </resource>
 		</array>
 		<vector2 name="28/one_way_collision_direction"> 0, 0 </vector2>
 		<real name="28/one_way_collision_max_depth"> 0 </real>
@@ -590,7 +590,7 @@
 		<resource name="29/occluder"></resource>		<vector2 name="29/navigation_offset"> 8, 8 </vector2>
 		<resource name="29/navigation"></resource>		<vector2 name="29/shape_offset"> 8, 8 </vector2>
 		<array name="29/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://44">  </resource>
+			<resource  resource_type="Shape2D" path="local://27">  </resource>
 		</array>
 		<vector2 name="29/one_way_collision_direction"> 0, 0 </vector2>
 		<real name="29/one_way_collision_max_depth"> 0 </real>

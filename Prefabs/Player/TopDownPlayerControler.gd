@@ -40,6 +40,6 @@ func _ready():
 func _fixed_process(delta):
 	
 	# realize horizontal movement
-	movement_H.DoMove(delta)	
+	movement_H.Apply(delta)	
 	# realize vertical movement
-	movement_V.DoMove(delta)	
+	movement_V.Apply(delta)	

@@ -122,17 +122,17 @@ points = Vector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 custom_solver_bias = 0.0
 points = Vector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
-[sub_resource type="ConvexPolygonShape2D" id=42]
+[sub_resource type="ConvexPolygonShape2D" id=25]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -8, -8, 8, -8, 8, 5, -8, -1 )
 
-[sub_resource type="ConvexPolygonShape2D" id=43]
+[sub_resource type="ConvexPolygonShape2D" id=26]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -8, -8, 8, -8, 8, 5, -8, 5 )
 
-[sub_resource type="ConvexPolygonShape2D" id=44]
+[sub_resource type="ConvexPolygonShape2D" id=27]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -8, -8, 8, -8, 8, -1, -8, 5 )
@@ -915,7 +915,7 @@ frame = 27
 [node name="StaticBody2D" type="StaticBody2D" parent="TestTileset27"]
 
 input/pickable = false
-shapes/0/shape = SubResource( 42 )
+shapes/0/shape = SubResource( 25 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -943,7 +943,7 @@ frame = 28
 [node name="StaticBody2D" type="StaticBody2D" parent="TestTileset28"]
 
 input/pickable = false
-shapes/0/shape = SubResource( 43 )
+shapes/0/shape = SubResource( 26 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -971,7 +971,7 @@ frame = 29
 [node name="StaticBody2D" type="StaticBody2D" parent="TestTileset29"]
 
 input/pickable = false
-shapes/0/shape = SubResource( 44 )
+shapes/0/shape = SubResource( 27 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -1008,13 +1008,6 @@ constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TestTileset30/StaticBody2D"]
-
-build_mode = 0
-polygon = Vector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
-shape_range = Vector2( -1, -1 )
-trigger = false
 
 [node name="TestTileset31" type="Sprite" parent="."]
 

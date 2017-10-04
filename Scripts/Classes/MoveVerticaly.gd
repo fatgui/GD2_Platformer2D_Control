@@ -10,6 +10,7 @@ var velocity = Vector2()
 const FLOOR_NORMAL = Vector2(0, -1)
 const SLOPE_FRICTION = 20
 
+# Constructor
 func _init(obj,mKeyUp,mKeyDown,object_speed, object_acceleration):
 	object = obj
 	key_1 = mKeyUp
@@ -17,8 +18,8 @@ func _init(obj,mKeyUp,mKeyDown,object_speed, object_acceleration):
 	speed = object_speed
 	accel = object_acceleration
 	
-	
-func DoMove(delta):
+# Apply movement to object
+func Apply(delta):
 	
 	movement = 0;
 	
@@ -28,8 +29,9 @@ func DoMove(delta):
 	movement*=speed
 	velocity.y = lerp(velocity.y, movement, accel)
 	
-	object.move_and_slide(velocity,Vector2(0, -1),20) 
-	
+	velocity = object.move_and_slide(velocity,Vector2(0, -1),20) 
+
+# Get last velocity vector
 func GetVelocity():
 	return velocity	
 	
