@@ -29,9 +29,7 @@ tile_data = IntArray( 65535, 14, 27, 14, 131071, 14, 65563, 14, 196607, 14, 1310
 [node name="Player" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 203, 172 )
-jumpForce = 400
-jumpTreshold = 0.2
-worldGravity = Vector2( 0, 100 )
+jumpForce = 300
 
 
 [editable path="Player"]

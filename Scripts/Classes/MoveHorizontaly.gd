@@ -5,7 +5,7 @@ var speed = 0
 var accel = 0
 var movement = 0
 var velocity = Vector2()
-
+var is_ground = false
 
 # Movement Constants
 const FLOOR_NORMAL = Vector2(0, -1)
@@ -32,7 +32,10 @@ func Apply(delta):
 	velocity.x = lerp(velocity.x, movement, accel)
 	
 	velocity = object.move_and_slide(velocity,FLOOR_NORMAL,SLOPE_FRICTION) 
-
+	
+	
 # Get last velocity vector
 func GetVelocity():
 	return velocity
+	
+	

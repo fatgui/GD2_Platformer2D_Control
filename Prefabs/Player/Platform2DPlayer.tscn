@@ -3,11 +3,10 @@
 [ext_resource path="res://Prefabs/Player/Platform2DPlayerController.gd" type="Script" id=1]
 [ext_resource path="res://Animations/Player/PlayerAnimation.scn" type="PackedScene" id=2]
 
-[sub_resource type="CapsuleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 7.0
-height = 6.0
+extents = Vector2( 5.73942, 10 )
 
 [node name="Player" type="KinematicBody2D"]
 
@@ -21,6 +20,9 @@ collision/margin = 0.08
 script/script = ExtResource( 1 )
 playerMaxSpeed = 200
 acceleration = 0.2
+jumpForce = 200
+jumpTreshold = 0.2
+worldGravity = Vector2( 0, 1000 )
 
 [node name="PlayerAnimation" parent="." instance=ExtResource( 2 )]
 
