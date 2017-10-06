@@ -49,6 +49,7 @@ func Apply(delta):
 	object.move_and_slide(velocity,Vector2(0, -1),20)
 	_is_ground = object.is_move_and_slide_on_floor()
 	
+	
 	# Is on ground ?
 	if _is_ground:
 		_is_enabled = true
@@ -59,6 +60,7 @@ func Apply(delta):
 			velocity.y -= jumpForce
 			_jump_timer = jumpTreshold 
 			_is_enabled = false
+			
 	
 		
 		
