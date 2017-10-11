@@ -30,14 +30,8 @@ func _ready():
 	# get player object
 	var player = get_node(".")
 	
-	# create platformer2D move controller
-	# ver #1 - complex
+	# create platformer2D move controller	
 	move = cMove.new(player, key_left, key_right, key_jump, playerMaxSpeed, acceleration, jumpForce, jumpTreshold)
-	
-	# ver #2 - separated control
-#	move = cMove.new(player, key_left, key_right, playerMaxSpeed, acceleration)
-#	jump = cJumping.new(player, key_jump, jumpForce, jumpTreshold)
-#	jump.SetGravity(worldGravity)
 	
 	# enable update per frame
 	set_fixed_process(true)
@@ -46,5 +40,5 @@ func _fixed_process(delta):
 	
 	# realize platformer movement
 	move.Apply(delta)
-	#jump.Apply(delta,move.velocity)
+	
 	
