@@ -7,13 +7,7 @@ func _init(key_name):
 	
 func Check():
 	input = Input.is_action_pressed(self.assigned_key)	
-	current_state = input 
-	
-#	if input:
-#		print("KEY "+assigned_key+" = true")
-#	else:
-#		print("KEY "+assigned_key+" = false")
-
+	current_state = input 	
 	return current_state
 	
 
