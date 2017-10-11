@@ -9,9 +9,21 @@ Prototype for PLatform2D player controler with animation state for use in platfo
 - class from Platformer2D movement
 - class for animation state checker from Platformer2D movement result
 - collision check is included inside classes
+- play animation
+- player facing by movement direction
 - example for simple top-down movement
 - example for Platformer2D movement
     - left
     - right
     - jump
     - fall
+    
+# ToDo:
+
+- fire
+- pickup item
+- die
+- climb
+- pull/push
+- double jump
+- ...
