@@ -1,6 +1,5 @@
 extends KinematicBody2D
 
-var global = preload("res://Global.gd")
 var cMove = preload("res://Scripts/Classes/MovePlatformer.gd")
 var cInput = preload("res://Scripts/Classes/KeyInputs.gd")
 var cAnimState = preload("res://Scripts/Classes/AnimationState.gd")
@@ -15,6 +14,7 @@ export var worldGravity = Vector2(0,1000)
 var key_left = null
 var key_right= null
 var key_jump= null
+
 
 var move = null;
 var jump = null;
@@ -33,6 +33,7 @@ func _ready():
 	# create platformer2D move controller	
 	move = cMove.new(player, key_left, key_right, key_jump, playerMaxSpeed, acceleration, jumpForce, jumpTreshold)
 	
+	# create AnimationState class
 	anim = cAnimState.new(get_node("PlayerAnimation/AnimationPlayer"));
 		
 	# enable update per frame
@@ -42,5 +43,10 @@ func _fixed_process(delta):
 	
 	# realize platformer movement
 	move.Apply(delta);
-	anim.Apply(move);
+	
+	# get animation state and store result to global variable for easy access from any code
+	var playerAnimState = anim.GetState(move);
+	
+	# play animation
+	anim.Play(playerAnimState);
 	

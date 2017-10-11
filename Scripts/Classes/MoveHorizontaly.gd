@@ -12,15 +12,19 @@ const FLOOR_NORMAL = Vector2(0, -1)
 const SLOPE_FRICTION = 20
 const MIN_SPEED = 0.2
 
-# COnstructor
+# -----------------------------------------------------------
+# Horizontal movement constructor
+# -----------------------------------------------------------
 func _init(obj,mKeyLeft,mKeyRight,object_speed, object_acceleration):
 	object = obj
 	key_1 = mKeyLeft
 	key_2 = mKeyRight
 	speed = object_speed
 	accel = object_acceleration
-	
+
+# -----------------------------------------------------------
 # Apply movement to object
+# -----------------------------------------------------------
 func Apply(delta):
 	
 	movement = 0;
@@ -33,8 +37,9 @@ func Apply(delta):
 	
 	velocity = object.move_and_slide(velocity,FLOOR_NORMAL,SLOPE_FRICTION) 
 	
-	
+# -----------------------------------------------------------
 # Get last velocity vector
+# -----------------------------------------------------------
 func GetVelocity():
 	return velocity
 	
