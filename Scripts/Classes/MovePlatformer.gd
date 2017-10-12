@@ -10,6 +10,7 @@ var speed = 0
 var accel = 0
 var movement = 0
 var velocity = Vector2()
+var facing = Global.eFacing.TO_RIGHT
 
 # -----------------------------------------------------------
 # Jumping properties
@@ -17,10 +18,10 @@ var velocity = Vector2()
 var world_gravity = Vector2(0,1000)
 var jumpForce = 400
 var jumpTreshold = 0.2
-var isOnGround = false;
-var jumping = false;
-var _jump_timer = 0;
-var _is_enabled = true;
+var isOnGround = false
+var jumping = false
+var _jump_timer = 0
+var _is_enabled = true
 
 
 # -----------------------------------------------------------
@@ -50,10 +51,14 @@ func Apply(delta):
 	
 	velocity += world_gravity * delta
 	_jump_timer += delta 
-	movement = 0;
+	movement = 0
 	
-	if key_1.Check(): movement = -1
-	if key_2.Check(): movement = 1
+	if key_1.Pressed(): 
+		movement = -1
+		facing = Global.eFacing.TO_LEFT
+	if key_2.Pressed(): 
+		movement = 1
+		facing = Global.eFacing.TO_RIGHT
 	
 	movement*=speed
 	
@@ -68,12 +73,12 @@ func Apply(delta):
 	_is_enabled = _jump_timer < jumpTreshold 
 	
 	# Apply jump force on key pressed when is enabled
-	if( key_3.Check() and _is_enabled):
-		jumping = true;
+	if key_3.Pressed() and _is_enabled:
+		jumping = true
 		velocity.y -= jumpForce
 		_jump_timer = jumpTreshold 
 		
-	if velocity.y > 0: jumping = false;
+	if velocity.y > 0: jumping = false
 	
 # -----------------------------------------------------------
 # Get last velocity vector

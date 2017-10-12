@@ -35,6 +35,8 @@ jumpForce = 300
 
 editor/display_folded = false
 
+[node name="Container" type="Node2D" parent="."]
+
 
 [editable path="Player"]
 [editable path="Player/PlayerAnimation"]

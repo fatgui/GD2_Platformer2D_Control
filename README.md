@@ -7,6 +7,7 @@ Prototype for Platform2D player controller with animation for use in 2D platform
 - class for move horizontraly
 - class for move verticaly
 - class for input event
+- class for shooting
 - class for Platformer2D movement
 - class for animation state checker by from assigned Platformer2D movement instance
 - collision check is included inside classes
@@ -22,7 +23,6 @@ Prototype for Platform2D player controller with animation for use in 2D platform
     
 # ToDo:
 
-- fire
 - pickup item
 - die
 - climb

@@ -32,8 +32,8 @@ func Apply(delta):
 	
 	movement = 0;
 	
-	if key_1.Check(): movement = -1
-	if key_2.Check(): movement = 1
+	if key_1.Pressed(): movement = -1
+	if key_2.Pressed(): movement = 1
 	
 	movement*=speed
 	velocity.y = lerp(velocity.y, movement, accel)

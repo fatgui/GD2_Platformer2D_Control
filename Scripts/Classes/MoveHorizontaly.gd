@@ -5,7 +5,6 @@ var speed = 0
 var accel = 0
 var movement = 0
 var velocity = Vector2()
-var is_ground = false
 
 # Movement Constants
 const FLOOR_NORMAL = Vector2(0, -1)
@@ -29,8 +28,8 @@ func Apply(delta):
 	
 	movement = 0;
 	
-	if key_1.Check(): movement = -1
-	if key_2.Check(): movement = 1
+	if key_1.Pressed(): movement = -1
+	if key_2.Pressed(): movement = 1
 	
 	movement*=speed
 	velocity.x = lerp(velocity.x, movement, accel)
