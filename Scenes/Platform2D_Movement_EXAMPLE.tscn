@@ -37,6 +37,8 @@ editor/display_folded = false
 
 [node name="Container" type="Node2D" parent="."]
 
+[connection signal="moveSignal" from="Player" to="." method="update_camera"]
+
 
 [editable path="Player"]
 [editable path="Player/PlayerAnimation"]
