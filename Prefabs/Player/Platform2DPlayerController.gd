@@ -28,7 +28,8 @@ signal moveSignal
 
 func _ready():
 
-	
+	# preload Inventory data
+	Inventory.Load();
 
 	#create input control
 	key_left = cInput.new("key_left")
@@ -43,8 +44,6 @@ func _ready():
 	# create platformer2D move controller	
 	move = cMove.new(player, key_left, key_right, key_jump, playerMaxSpeed, acceleration, jumpForce, jumpTreshold)
 
-	
-
 	# create AnimationState class
 	anim = cAnimState.new(get_node("PlayerAnimation/AnimationPlayer"))
 
@@ -56,6 +55,11 @@ func _ready():
 	# enable update per frame
 	set_fixed_process(true)
 
+	
+	Inventory.Add('coins',0);
+	Inventory.Add('health',100);
+	Inventory.Add('ammo',100);
+	
 	
 func _fixed_process(delta):
 	
@@ -73,7 +77,9 @@ func _fixed_process(delta):
 	
 	if move.velocity.x!=0 || move.velocity.y!=0: emit_signal("moveSignal")
 	
-	
+
+func _exit_tree():
+	Inventory.Save();
 	
 	
 	

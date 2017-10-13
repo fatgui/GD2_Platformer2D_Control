@@ -14,6 +14,7 @@ Prototype for Platform2D player controller with animation for use in 2D platform
 - play animation
 - player facing by movement direction
 - improved Tileset addon (organize now tileset in scene as in texture and set resource path to image)
+- save/load inventory data to file
 - example for simple top-down movement
 - example for Platformer2D movement
     - left
