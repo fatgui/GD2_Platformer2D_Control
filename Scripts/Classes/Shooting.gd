@@ -8,16 +8,17 @@ var bullet_holder = null
 var shooter = null
 var key = null
 var origin = null
-
+var infinite = true;
 # -----------------------------------------------------------
 # Shooting class constructor
 # -----------------------------------------------------------
-func _init(_shooter,_key, _bullet,_holder,_origin):
+func _init(_shooter,_key, _bullet,_holder,_origin,_infinite):
 	shooter = _shooter
 	key = _key
 	bullet_prefab = _bullet
 	bullet_holder = _holder
 	origin = _origin
+	infinite = _infinite
 	
 	# create timer
 	timer = Timer.new()
@@ -49,6 +50,8 @@ func on_timer_complete():
 # -----------------------------------------------------------
 func Shoot():	
 
+	if (Inventory.items.ammo<=0 and !infinite): return
+	
 	var bullet = bullet_prefab.instance()	
 	shooting = false
 	var pos = origin.get_global_pos()
@@ -59,3 +62,4 @@ func Shoot():
 	if shooter.facing == Global.eFacing.TO_RIGHT: bullet.SetFireDirection(1)
 	
 	timer.start()	
+	if (!infinite): Inventory.items.ammo -= 1

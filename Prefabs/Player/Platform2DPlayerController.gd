@@ -49,7 +49,7 @@ func _ready():
 	# create shooting instance
 	var container = get_parent().get_node("Container")
 	var fire_pivot = get_node("FireOrigin_RIGHT")	
-	fire = cShooting.new(move, key_fire,bullet_prefab,container,fire_pivot)
+	fire = cShooting.new(move, key_fire,bullet_prefab,container,fire_pivot,false)
 	
 	# enable update per frame
 	set_fixed_process(true)
