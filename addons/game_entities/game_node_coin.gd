@@ -2,9 +2,6 @@ tool
 
 extends Area2D
 
-#load("res://Scripts/Classes/Inventory.gd")
-
-
 var path = 'res://Sprites/Entities/'
 
 var sprite = Sprite.new()
@@ -38,6 +35,7 @@ func _enter_tree():
 	
 	
 func pickup():
-	#Inventory.items.coins += 1
+	if get_tree().is_editor_hint():
+		Inventory.items.coins += 1
 	queue_free()
 
