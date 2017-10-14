@@ -9,6 +9,9 @@ var shape = CollisionShape2D.new()
 
 export(int,0,3) var key_type = 0 setget _set_key_type
 
+export var item_type = "coins"
+export var item_amount = 1
+
 func _get_item_rect():
     return sprite.get_item_rect() # Notice this call does not start with
 
@@ -19,11 +22,8 @@ func _set_key_type( value ):
 	key_type = type
 	if sprite:
 		sprite.set_texture(tex)
-		sprite.set_name("ItemSprite")
-		
-	else:
-		print("NO")
-
+		sprite.set_name("Item_"+item_type+"_"+str(type))
+	
 func _enter_tree():
 	add_child(shape)
 	add_child(sprite)
@@ -35,7 +35,7 @@ func _enter_tree():
 	
 	
 func pickup():
-	if get_tree().is_editor_hint():
-		Inventory.items.coins += 1
+	if !has_node("/root/Inventory"): return
+	get_node("/root/Inventory").Add(item_type,item_amount);	
 	queue_free()
 

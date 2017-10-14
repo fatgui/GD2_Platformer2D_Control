@@ -34,7 +34,7 @@ func Load():
 func Add(itemName,val):
 	if !items.has(itemName):
 		items[itemName]=val	
-		
+	items[itemName]+=val	
 func Del(itemName):
 	if items.has(itemName):
 		items.erase(itemName)
