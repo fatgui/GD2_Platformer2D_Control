@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=1]
+[gd_scene load_steps=11 format=1]
 
 [ext_resource path="res://Scripts/Viewport.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/TestTileset/TestTileset.tres" type="TileSet" id=2]
@@ -23,11 +23,6 @@ custom_solver_bias = 0.0
 radius = 6.0
 
 [sub_resource type="CircleShape2D" id=4]
-
-custom_solver_bias = 0.0
-radius = 6.0
-
-[sub_resource type="CircleShape2D" id=5]
 
 custom_solver_bias = 0.0
 radius = 6.0
@@ -64,7 +59,7 @@ gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
 
-[node name="GAME_Coin3" type="Area2D" parent="GameEntities"]
+[node name="GAME_Coin" type="Area2D" parent="GameEntities"]
 
 transform/pos = Vector2( 160, 192 )
 input/pickable = true
@@ -79,11 +74,11 @@ script/script = ExtResource( 3 )
 __meta__ = {
 "_editor_icon": ExtResource( 4 )
 }
-key_type = 1
+key_type = 0
 item_type = "coins"
 item_amount = 1
 
-[node name="GAME_Coin4" type="Area2D" parent="GameEntities"]
+[node name="GAME_Coin1" type="Area2D" parent="GameEntities"]
 
 transform/pos = Vector2( 160, 176 )
 input/pickable = true
@@ -98,11 +93,11 @@ script/script = ExtResource( 3 )
 __meta__ = {
 "_editor_icon": ExtResource( 4 )
 }
-key_type = 2
+key_type = 1
 item_type = "coins"
-item_amount = 2
+item_amount = 1
 
-[node name="GAME_Coin5" type="Area2D" parent="GameEntities"]
+[node name="GAME_Coin2" type="Area2D" parent="GameEntities"]
 
 transform/pos = Vector2( 160, 160 )
 input/pickable = true
@@ -117,13 +112,13 @@ script/script = ExtResource( 3 )
 __meta__ = {
 "_editor_icon": ExtResource( 4 )
 }
-key_type = 3
+key_type = 2
 item_type = "coins"
-item_amount = 3
+item_amount = 1
 
-[node name="GAME_Coin6" type="Area2D" parent="GameEntities"]
+[node name="GAME_Coin3" type="Area2D" parent="GameEntities"]
 
-transform/pos = Vector2( 192, 160 )
+transform/pos = Vector2( 336, 160 )
 input/pickable = true
 shapes/0/shape = SubResource( 4 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
@@ -136,26 +131,7 @@ script/script = ExtResource( 3 )
 __meta__ = {
 "_editor_icon": ExtResource( 4 )
 }
-key_type = 0
-item_type = "coins"
-item_amount = 1
-
-[node name="GAME_Coin7" type="Area2D" parent="GameEntities"]
-
-transform/pos = Vector2( 224, 160 )
-input/pickable = true
-shapes/0/shape = SubResource( 5 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
-shapes/0/trigger = false
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-script/script = ExtResource( 3 )
-__meta__ = {
-"_editor_icon": ExtResource( 4 )
-}
-key_type = 1
+key_type = 3
 item_type = "coins"
 item_amount = 1
 

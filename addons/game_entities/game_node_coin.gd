@@ -38,4 +38,3 @@ func pickup():
 	if !has_node("/root/Inventory"): return
 	get_node("/root/Inventory").Add(item_type,item_amount);	
 	queue_free()
-
