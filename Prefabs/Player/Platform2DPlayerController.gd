@@ -39,8 +39,7 @@ func _ready():
 	
 	# get player object
 	player = get_node(".")
-	player.connect("move", self, "update_camera")
-
+	
 	# create platformer2D move controller	
 	move = cMove.new(player, key_left, key_right, key_jump, playerMaxSpeed, acceleration, jumpForce, jumpTreshold)
 
@@ -83,3 +82,11 @@ func _exit_tree():
 	
 	
 	
+
+func _on_TriggerDetector_area_enter( area ):
+	if area.has_method('pickup'):
+		area.pickup()
+
+
+func _on_TriggerDetector_area_exit( area ):
+	pass # replace with function body

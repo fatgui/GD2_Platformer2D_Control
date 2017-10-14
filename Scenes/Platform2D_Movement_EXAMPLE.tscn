@@ -1,25 +1,26 @@
-[gd_scene load_steps=9 format=1]
+[gd_scene load_steps=10 format=1]
 
-[ext_resource path="res://Scripts/TestLevel_0.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Viewport.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/TestTileset/TestTileset.tres" type="TileSet" id=2]
-[ext_resource path="res://Prefabs/Player/Platform2DPlayer.tscn" type="PackedScene" id=3]
-[ext_resource path="res://addons/game_entities/game_node_coin.gd" type="Script" id=4]
-[ext_resource path="res://addons/game_entities/game_node_icon_coin.png" type="Texture" id=5]
+[ext_resource path="res://addons/game_entities/game_node_coin.gd" type="Script" id=3]
+[ext_resource path="res://addons/game_entities/game_node_icon_coin.png" type="Texture" id=4]
+[ext_resource path="res://Prefabs/Player/Platform2DPlayer.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Fonts/runescape.fnt" type="BitmapFont" id=6]
 
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 8.0
+radius = 6.0
 
 [sub_resource type="CircleShape2D" id=2]
 
 custom_solver_bias = 0.0
-radius = 8.0
+radius = 6.0
 
 [sub_resource type="CircleShape2D" id=3]
 
 custom_solver_bias = 0.0
-radius = 8.0
+radius = 6.0
 
 [node name="Node" type="Node2D"]
 
@@ -43,16 +44,6 @@ collision/mask = 1
 occluder/light_mask = 1
 tile_data = IntArray( 65535, 14, 27, 14, 131071, 14, 65563, 14, 196607, 14, 131099, 14, 262143, 14, 196635, 14, 327679, 14, 262164, 53, 262171, 14, 393215, 14, 327695, 6, 327699, 60, 327700, 61, 327701, 62, 327707, 14, 458751, 14, 393221, 27, 393222, 28, 393223, 536870940, 393224, 536870940, 393225, 28, 393226, 536870940, 393227, 29, 393231, 14, 393235, 0, 393236, 1, 393237, 5, 393238, 44, 393239, 0, 393240, 4, 393241, 5, 393243, 14, 524287, 14, 458766, 27, 458767, 28, 458768, 29, 458771, 16, 458772, 19, 458773, 21, 458774, 44, 458775, 16, 458776, 18, 458777, 21, 458779, 14, 589823, 14, 524288, 0, 524289, 1, 524290, 5, 524310, 44, 524315, 14, 655359, 14, 589824, 8, 589825, 33, 589826, 13, 589846, 44, 589851, 14, 720895, 14, 655360, 8, 655361, 33, 655362, 24, 655363, 25, 655364, 25, 655365, 25, 655366, 25, 655367, 25, 655368, 26, 655382, 44, 655387, 14, 786431, 14, 720896, 8, 720897, 33, 720898, 40, 720899, 41, 720900, 41, 720901, 41, 720902, 41, 720903, 41, 720904, 42, 720917, 24, 720918, 25, 720919, 26, 720923, 14, 851967, 14, 786432, 8, 786433, 10, 786434, 13, 786449, 49, 786450, 50, 786451, 51, 786452, 51, 786453, 51, 786454, 51, 786455, 51, 786456, 51, 786457, 51, 786458, 51, 786459, 14, 917503, 14, 851968, 16, 851969, 18, 851970, 21, 851972, 35, 851976, 536870942, 851981, 30, 851983, 49, 851984, 50, 851985, 57, 851986, 58, 851995, 14, 983039, 14, 917504, 51, 917505, 51, 917506, 51, 917507, 51, 917508, 51, 917509, 51, 917510, 51, 917511, 51, 917512, 51, 917513, 51, 917514, 51, 917515, 51, 917516, 51, 917517, 51, 917518, 51, 917519, 57, 917520, 58, 917531, 14 )
 
-[node name="Player" parent="." instance=ExtResource( 3 )]
-
-editor/display_folded = true
-transform/pos = Vector2( 203, 172 )
-jumpForce = 300
-
-[node name="PlayerAnimation" parent="Player"]
-
-editor/display_folded = false
-
 [node name="Container" type="Node2D" parent="."]
 
 [node name="GameEntities" type="Area2D" parent="."]
@@ -63,9 +54,9 @@ gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
 
-[node name="GAME_Coin" type="Area2D" parent="GameEntities"]
+[node name="GAME_Coin3" type="Area2D" parent="GameEntities"]
 
-transform/pos = Vector2( 160, 208 )
+transform/pos = Vector2( 160, 192 )
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
@@ -74,15 +65,15 @@ gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
-script/script = ExtResource( 4 )
+script/script = ExtResource( 3 )
 __meta__ = {
-"_editor_icon": ExtResource( 5 )
+"_editor_icon": ExtResource( 4 )
 }
 key_type = 0
 
-[node name="GAME_Coin1" type="Area2D" parent="GameEntities"]
+[node name="GAME_Coin4" type="Area2D" parent="GameEntities"]
 
-transform/pos = Vector2( 176, 208 )
+transform/pos = Vector2( 160, 176 )
 input/pickable = true
 shapes/0/shape = SubResource( 2 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
@@ -91,15 +82,15 @@ gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
-script/script = ExtResource( 4 )
+script/script = ExtResource( 3 )
 __meta__ = {
-"_editor_icon": ExtResource( 5 )
+"_editor_icon": ExtResource( 4 )
 }
 key_type = 0
 
-[node name="GAME_Coin2" type="Area2D" parent="GameEntities"]
+[node name="GAME_Coin5" type="Area2D" parent="GameEntities"]
 
-transform/pos = Vector2( 192, 208 )
+transform/pos = Vector2( 160, 160 )
 input/pickable = true
 shapes/0/shape = SubResource( 3 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
@@ -108,14 +99,47 @@ gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
-script/script = ExtResource( 4 )
+script/script = ExtResource( 3 )
 __meta__ = {
-"_editor_icon": ExtResource( 5 )
+"_editor_icon": ExtResource( 4 )
 }
 key_type = 0
 
-[connection signal="moveSignal" from="Player" to="." method="update_camera"]
+[node name="Player" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 188, 206 )
+jumpForce = 300
+
+[node name="HUD" type="Container" parent="."]
+
+editor/display_folded = true
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -1.0
+margin/top = 1.0
+margin/right = 425.0
+margin/bottom = 240.0
+
+[node name="Label" type="Label" parent="HUD"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 17.0
+margin/top = 5.0
+margin/right = 177.0
+margin/bottom = 21.0
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_offset_y = 1
+text = "Coins: 000"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 
 
-[editable path="Player"]
-[editable path="Player/PlayerAnimation"]
