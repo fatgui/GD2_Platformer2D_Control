@@ -38,3 +38,6 @@ func Add(itemName,val):
 func Del(itemName):
 	if items.has(itemName):
 		items.erase(itemName)
+		
+func Set(itemName,val):
+	items[itemName] = val

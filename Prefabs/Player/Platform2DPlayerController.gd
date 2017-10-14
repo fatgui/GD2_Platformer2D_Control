@@ -55,9 +55,9 @@ func _ready():
 	set_fixed_process(true)
 
 	
-	Inventory.Add('coins',0);
-	Inventory.Add('health',100);
-	Inventory.Add('ammo',100);
+	Inventory.Set('coins',0);
+	Inventory.Set('health',100);
+	Inventory.Set('ammo',100);
 	
 	
 func _fixed_process(delta):

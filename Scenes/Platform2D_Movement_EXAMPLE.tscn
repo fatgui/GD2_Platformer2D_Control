@@ -5,7 +5,7 @@
 [ext_resource path="res://addons/game_entities/game_node_coin.gd" type="Script" id=3]
 [ext_resource path="res://addons/game_entities/game_node_icon_coin.png" type="Texture" id=4]
 [ext_resource path="res://Prefabs/Player/Platform2DPlayer.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Fonts/runescape.fnt" type="BitmapFont" id=6]
+[ext_resource path="res://Prefabs/Hud/HUD.tscn" type="PackedScene" id=6]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -48,6 +48,7 @@ tile_data = IntArray( 65535, 14, 27, 14, 131071, 14, 65563, 14, 196607, 14, 1310
 
 [node name="GameEntities" type="Area2D" parent="."]
 
+editor/display_folded = true
 input/pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -110,36 +111,7 @@ key_type = 0
 transform/pos = Vector2( 188, 206 )
 jumpForce = 300
 
-[node name="HUD" type="Container" parent="."]
-
-editor/display_folded = true
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = -1.0
-margin/top = 1.0
-margin/right = 425.0
-margin/bottom = 240.0
-
-[node name="Label" type="Label" parent="HUD"]
-
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 17.0
-margin/top = 5.0
-margin/right = 177.0
-margin/bottom = 21.0
-custom_fonts/font = ExtResource( 6 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_constants/shadow_offset_x = 1
-custom_constants/shadow_offset_y = 1
-text = "Coins: 000"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
+[node name="HUD" parent="." instance=ExtResource( 6 )]
 
 
+[editable path="HUD"]
