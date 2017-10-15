@@ -1,3 +1,7 @@
+#------------------------------------------------
+# ITEM: COIN
+# EVENT: Pickup (onEnterArea)
+#------------------------------------------------
 tool
 
 extends Area2D
@@ -32,7 +36,7 @@ func _enter_tree():
 	
 	var sh = CircleShape2D.new()
 	sh.set_radius(6)	
-	shape.set_shape(sh)	
+	shape.set_shape(sh)		
 	set('key_type', key_type)
 	
 # pickup item method which is called from area detector assigned on player

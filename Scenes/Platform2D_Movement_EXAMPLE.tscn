@@ -226,14 +226,13 @@ item_type = "health"
 item_amount = 100
 item_limit = 100
 
-[node name="GAME_Teleport2" type="Area2D" parent="GameEntities"]
+[node name="GAME_Teleport_A" type="Area2D" parent="GameEntities"]
 
-visibility/behind_parent = true
-transform/pos = Vector2( 96, 80 )
+transform/pos = Vector2( 96, 208 )
 input/pickable = true
 shapes/0/shape = SubResource( 8 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
-shapes/0/trigger = false
+shapes/0/trigger = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
@@ -243,16 +242,16 @@ __meta__ = {
 "_editor_icon": ExtResource( 10 )
 }
 teleport_type = 0
-target_name = "GAME_Teleport1"
+target_name = "GAME_Teleport_B"
+key_name = "key_up"
 
-[node name="GAME_Teleport1" type="Area2D" parent="GameEntities"]
+[node name="GAME_Teleport_B" type="Area2D" parent="GameEntities"]
 
-visibility/behind_parent = true
-transform/pos = Vector2( 96, 208 )
+transform/pos = Vector2( 96, 80 )
 input/pickable = true
 shapes/0/shape = SubResource( 9 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
-shapes/0/trigger = false
+shapes/0/trigger = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
@@ -262,7 +261,8 @@ __meta__ = {
 "_editor_icon": ExtResource( 10 )
 }
 teleport_type = 0
-target_name = "GAME_Teleport2"
+target_name = "GAME_Teleport_A"
+key_name = "key_up"
 
 [node name="Player" parent="." instance=ExtResource( 11 )]
 
@@ -272,3 +272,4 @@ jumpForce = 300
 [node name="HUD" parent="." instance=ExtResource( 12 )]
 
 
+[editable path="Player"]
