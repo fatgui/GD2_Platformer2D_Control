@@ -13,7 +13,7 @@ Prototype for Platform2D player controller with animation for use in 2D platform
 - collision check is included inside classes
 - pickup coins, ammo, healt (is defined as NODE)
 - play animation
-- move viewport by player position 
+- move viewport by player position with smooth transition ON/OFF
 - player facing by movement direction
 - improved Tileset addon (organize now tileset in scene as in texture and set resource path to image)
 - save/load inventory data to file
