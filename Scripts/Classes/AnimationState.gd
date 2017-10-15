@@ -39,7 +39,7 @@ func GetState(moveControl):
 	if moveControl.jumping and moveControl.velocity.y<0: 
 		animation_state = Global.eAnimState.JUMP
 	
-	return animation_state;
+	return animation_state
 
 # -----------------------------------------------------------
 # Play animation by state

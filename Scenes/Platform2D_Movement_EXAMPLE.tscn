@@ -49,6 +49,8 @@ radius = 6.0
 [node name="TestScene" type="Node2D"]
 
 script/script = ExtResource( 1 )
+smoothFollow = true
+smoothSpeed = 0.1
 
 [node name="TileMap" type="TileMap" parent="."]
 
@@ -72,6 +74,7 @@ tile_data = IntArray( 65535, 14, 27, 14, 131071, 14, 65563, 14, 196607, 14, 1310
 
 [node name="GameEntities" type="Area2D" parent="."]
 
+editor/display_folded = true
 input/pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -219,7 +222,4 @@ jumpForce = 300
 
 [node name="HUD" parent="." instance=ExtResource( 10 )]
 
-editor/display_folded = true
 
-
-[editable path="HUD"]

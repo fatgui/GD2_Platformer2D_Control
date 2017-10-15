@@ -14,7 +14,7 @@ func SetFireDirection(dir):
 	
 func _fixed_process(delta):
 	move(velocity*delta)
-	if (get_global_pos().x>1204):
+	if get_global_pos().x>1204:
 		queue_free()
 		
 	if is_colliding():
