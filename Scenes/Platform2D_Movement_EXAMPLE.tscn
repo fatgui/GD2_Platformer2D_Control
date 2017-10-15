@@ -1,11 +1,15 @@
-[gd_scene load_steps=11 format=1]
+[gd_scene load_steps=18 format=1]
 
 [ext_resource path="res://Scripts/Viewport.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/TestTileset/TestTileset.tres" type="TileSet" id=2]
 [ext_resource path="res://addons/game_entities/game_node_coin.gd" type="Script" id=3]
 [ext_resource path="res://addons/game_entities/game_node_icon_coin.png" type="Texture" id=4]
-[ext_resource path="res://Prefabs/Player/Platform2DPlayer.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Prefabs/Hud/HUD.tscn" type="PackedScene" id=6]
+[ext_resource path="res://addons/game_entities/game_node_ammo.gd" type="Script" id=5]
+[ext_resource path="res://addons/game_entities/game_node_icon_ammo.png" type="Texture" id=6]
+[ext_resource path="res://addons/game_entities/game_node_health.gd" type="Script" id=7]
+[ext_resource path="res://addons/game_entities/game_node_icon_health.png" type="Texture" id=8]
+[ext_resource path="res://Prefabs/Player/Platform2DPlayer.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Prefabs/Hud/HUD.tscn" type="PackedScene" id=10]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -23,6 +27,21 @@ custom_solver_bias = 0.0
 radius = 6.0
 
 [sub_resource type="CircleShape2D" id=4]
+
+custom_solver_bias = 0.0
+radius = 6.0
+
+[sub_resource type="CircleShape2D" id=5]
+
+custom_solver_bias = 0.0
+radius = 6.0
+
+[sub_resource type="CircleShape2D" id=6]
+
+custom_solver_bias = 0.0
+radius = 6.0
+
+[sub_resource type="CircleShape2D" id=7]
 
 custom_solver_bias = 0.0
 radius = 6.0
@@ -135,12 +154,70 @@ key_type = 3
 item_type = "coins"
 item_amount = 1
 
-[node name="Player" parent="." instance=ExtResource( 5 )]
+[node name="GAME_Ammo" type="Area2D" parent="GameEntities"]
+
+transform/pos = Vector2( 304, 176 )
+input/pickable = true
+shapes/0/shape = SubResource( 5 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+script/script = ExtResource( 5 )
+__meta__ = {
+"_editor_icon": ExtResource( 6 )
+}
+key_type = 0
+item_type = "ammo"
+item_amount = 10
+
+[node name="GAME_Ammo1" type="Area2D" parent="GameEntities"]
+
+transform/pos = Vector2( 416, 176 )
+input/pickable = true
+shapes/0/shape = SubResource( 6 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+script/script = ExtResource( 5 )
+__meta__ = {
+"_editor_icon": ExtResource( 6 )
+}
+key_type = 0
+item_type = "ammo"
+item_amount = 10
+
+[node name="GAME_Health" type="Area2D" parent="GameEntities"]
+
+transform/pos = Vector2( 144, 80 )
+input/pickable = true
+shapes/0/shape = SubResource( 7 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+script/script = ExtResource( 7 )
+__meta__ = {
+"_editor_icon": ExtResource( 8 )
+}
+key_type = 0
+item_type = "health"
+item_amount = 100
+item_limit = 100
+
+[node name="Player" parent="." instance=ExtResource( 9 )]
 
 transform/pos = Vector2( 188, 206 )
 jumpForce = 300
 
-[node name="HUD" parent="." instance=ExtResource( 6 )]
+[node name="HUD" parent="." instance=ExtResource( 10 )]
 
 editor/display_folded = true
 

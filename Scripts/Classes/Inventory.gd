@@ -35,6 +35,14 @@ func Add(itemName,val):
 	if !items.has(itemName):
 		items[itemName]=val	
 	items[itemName]+=val	
+	
+func AddWithLimitCheck(itemName,val,limit):
+	if !items.has(itemName):
+		items[itemName]=val	
+	items[itemName]+=val	
+	if items[itemName]>limit:
+		items[itemName] = limit
+	
 func Del(itemName):
 	if items.has(itemName):
 		items.erase(itemName)

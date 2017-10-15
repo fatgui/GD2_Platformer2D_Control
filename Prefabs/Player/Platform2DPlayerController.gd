@@ -26,6 +26,9 @@ const bullet_prefab = preload("res://Prefabs/Bullet/Bullet.tscn")
 
 signal moveSignal
 
+func _get_item_rect():
+    return get_node("PlayerAnimation/Sprite").get_item_rect() # Notice this call does not start with
+
 func _ready():
 
 	# preload Inventory data

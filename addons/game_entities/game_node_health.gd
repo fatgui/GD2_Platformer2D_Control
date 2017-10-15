@@ -9,8 +9,9 @@ var shape = CollisionShape2D.new()
 
 export(int,0,3) var key_type = 0 setget _set_key_type
 
-export var item_type = "coins"
-export var item_amount = 1
+export var item_type = "health"
+export var item_amount = 100
+export var item_limit = 100
 
 # recreate selection gizmo to sprite size
 func _get_item_rect():
@@ -19,7 +20,7 @@ func _get_item_rect():
 # set property
 func _set_key_type( value ):
 	var type = clamp(value, 0, 3)
-	var tex = load(path+'Coin_'+str(type)+'.png')
+	var tex = load(path+'Health_'+str(type)+'.png')
 	key_type = type
 	if sprite:
 		sprite.set_texture(tex)
@@ -38,5 +39,5 @@ func _enter_tree():
 # pickup item method which is called from area detector assigned on player
 func pickup():
 	if !has_node("/root/Inventory"): return
-	get_node("/root/Inventory").Add(item_type,item_amount);	
+	get_node("/root/Inventory").AddWithLimitCheck(item_type,item_amount,item_limit);	
 	queue_free()
