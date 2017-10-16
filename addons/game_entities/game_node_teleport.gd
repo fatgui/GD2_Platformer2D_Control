@@ -60,6 +60,7 @@ func Teleport(player):
 	eventOwner = player
 	pass
 
+# reset prepared teleportation
 func ResetTeleport():
 	set_process(false)
 	

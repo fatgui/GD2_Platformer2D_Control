@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=1]
+
+[ext_resource path="res://Scripts/Viewport.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Platform2D_Movement_L0.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Prefabs/Player/Platform2DPlayer.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Prefabs/Hud/HUD.tscn" type="PackedScene" id=4]
+
+[node name="TestScene" type="Node2D"]
+
+script/script = ExtResource( 1 )
+smoothFollow = true
+smoothSpeed = 0.1
+
+[node name="Level_0" parent="." instance=ExtResource( 2 )]
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+
+editor/display_folded = true
+transform/pos = Vector2( 188, 206 )
+jumpForce = 300
+
+[node name="HUD" parent="." instance=ExtResource( 4 )]
+
+
+[editable path="Player"]
