@@ -2,7 +2,7 @@
 
 Platformer2D game prototype/template
 
-[!Screenshot](https://www.dropbox.com/s/kff8wko09v30ve8/AGFX_Platform2D_screen1.PNG?dl=1)
+[!Screenshot](../master/screenshots/AGFX_Platform2D_screen1.PNG)
 
 # Features:
 
