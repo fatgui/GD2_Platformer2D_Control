@@ -5,7 +5,7 @@
 [ext_resource path="res://Prefabs/Player/Platform2DPlayer.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Prefabs/Hud/HUD.tscn" type="PackedScene" id=4]
 
-[node name="TestScene" type="Node2D"]
+[node name="Main" type="Node2D"]
 
 script/script = ExtResource( 1 )
 smoothFollow = true
