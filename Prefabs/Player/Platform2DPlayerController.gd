@@ -22,7 +22,9 @@ var anim = null
 var fire = null
 
 # bullet prefab for firing
-const bullet_prefab = preload("res://Prefabs/Bullet/Bullet.tscn")
+onready var bullet_prefab = preload("res://Prefabs/Bullet/Bullet.tscn")
+
+
 
 signal moveSignal
 
@@ -50,7 +52,7 @@ func _ready():
 	anim = cAnimState.new(get_node("PlayerAnimation/AnimationPlayer"))
 
 	# create shooting instance
-	var container = get_parent().get_node("Container")
+	var container =  Utils.find_node("Container")
 	var fire_pivot = get_node("FireOrigin_RIGHT")	
 	fire = cShooting.new(move, key_fire,bullet_prefab,container,fire_pivot,false)
 	
@@ -67,7 +69,7 @@ func _fixed_process(delta):
 	
 	# realize platformer movement
 	move.Apply(delta)
-	
+	move.SetJumpForce(450)
 	# get animation state and store result to global variable for easy access from any code
 	var playerAnimState = anim.GetState(move)
 	
@@ -77,25 +79,27 @@ func _fixed_process(delta):
 	# check shooting
 	fire.Check()
 	
+	# update viewport position
 	if move.velocity.x!=0 || move.velocity.y!=0: emit_signal("moveSignal")
 	
 
 func _exit_tree():
 	Inventory.Save();
 	
-	
-	
 
 func _on_TriggerDetector_area_enter( area ):
+	
 	# pickup ITEM
 	if area.has_method('pickup'):
 		area.pickup()
-	# teleport to target
+		
+	# teleport to target when player press 'key_up'
 	if area.has_method('Teleport'):
 		area.Teleport(player)
 
 
 func _on_TriggerDetector_area_exit( area ):
-	# reet teleport to target
+	
+	# reset teleport to target when player exit from area and key wasn't pressed
 	if area.has_method('ResetTeleport'):
 		area.ResetTeleport()

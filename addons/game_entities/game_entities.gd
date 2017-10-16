@@ -7,10 +7,12 @@ func _enter_tree():
 	add_custom_type("GAME_Ammo", "Area2D", load(path+'game_node_ammo.gd'), load(path+'game_node_icon_ammo.png'))
 	add_custom_type("GAME_Health", "Area2D", load(path+'game_node_health.gd'), load(path+'game_node_icon_health.png'))
 	add_custom_type("GAME_Teleport", "Area2D", load(path+'game_node_teleport.gd'), load(path+'game_node_icon_teleport.png'))
+	add_custom_type("GAME_JumpPowerUp", "Area2D", load(path+'game_node_jump_powerup.gd'), load(path+'game_node_icon_jump_powerup.png'))
 	
 func _exit_tree():
 	remove_custom_type("GAME_Coin")
 	remove_custom_type("GAME_Ammo")
 	remove_custom_type("GAME_Health")
 	remove_custom_type("GAME_Teleport")
+	remove_custom_type("GAME_JumpPowerUp")
 	

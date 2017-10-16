@@ -1,4 +1,3 @@
-
 # -----------------------------------------------------------
 # internal variables
 # -----------------------------------------------------------
@@ -21,9 +20,16 @@ var jumpTreshold = 0.2
 var isOnGround = false
 var inMoving = false;
 var jumping = false
+
+
+# -----------------------------------------------------------
+# Private variables
+# -----------------------------------------------------------
 var _jump_timer = 0
 var _is_enabled = true
-
+var _stored_jump_force = 0
+var _stored_speed = 0
+var _stored_gravity = Vector2(0,1000)
 
 # -----------------------------------------------------------
 # Movement constants
@@ -44,6 +50,11 @@ func _init(obj,mKeyLeft,mKeyRight,mKeyJump,object_speed, object_acceleration,obj
 	accel = object_acceleration
 	jumpForce = obj_jump_force
 	jumpTreshold = obj_jump_treshold
+	
+	# store movement properties for Restore methods
+	_stored_gravity = world_gravity
+	_stored_jump_force = jumpForce
+	_stored_speed = speed
 	
 # -----------------------------------------------------------
 # Apply movement to object
@@ -91,4 +102,40 @@ func Apply(delta):
 # Get last velocity vector
 # -----------------------------------------------------------
 func GetVelocity():
-	return velocity
+	return self.velocity
+
+# -----------------------------------------------------------
+# Set world gravity vector
+# -----------------------------------------------------------
+func SetGravity(new_gravity_vector):
+	self.world_gravity = new_gravity_vector
+	
+# -----------------------------------------------------------
+# Set world gravity vector
+# -----------------------------------------------------------
+func RestoreGravity():
+	self.world_gravity = _stored_gravity
+
+# -----------------------------------------------------------
+# Set force jump 
+# -----------------------------------------------------------
+func SetJumpForce(new_jump_force):
+	self.jumpForce = new_jump_force
+	
+# -----------------------------------------------------------
+# Restore jump force
+# -----------------------------------------------------------
+func RestoreJumpForce():
+	self.jumpForce = _stored_jump_force
+	
+# -----------------------------------------------------------
+# Set speed 
+# -----------------------------------------------------------
+func SetSpeed(new_speed):
+	self.speed = new_speed
+	
+# -----------------------------------------------------------
+# Restore speed
+# -----------------------------------------------------------
+func RestoreSpeed():
+	self.speed = _stored_speed	
