@@ -29,7 +29,20 @@ Platformer2D game prototype/template
 - pickup time limited powerUp gravity modifier 
 - pickup time limited powerUp speed modifier 
 - example for simple top-down movement
-- example for Platformer2D movement
+- example for Platformer2D movement:
+    - [left arrow] = move left
+    - [right arrow] = move right
+    - [up arrow] = enter to door
+    - [space] = jump
+    - [W] = fire
+    - working features:
+        - pickup coins + hud info
+        - pickup health + hud info (max limit 100)
+        - pickup ammo + hud info ()
+        - pickup powerup strong jump 10 sec.
+        - pickup powerup bigger speed
+        - pickup powerup gravity vector (0,500)
+        - teleport to seconf linked teleport by name
 
     
 # ToDo:
