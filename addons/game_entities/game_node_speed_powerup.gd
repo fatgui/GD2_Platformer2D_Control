@@ -14,6 +14,8 @@ var shape = CollisionShape2D.new()
 export(int,0,3) var key_type = 0 setget _set_key_type
 
 var item_type = "speed_powerup"
+export var new_speed = 400
+export var time_to_off = 10
 
 # recreate selection gizmo to sprite size
 func _get_item_rect():

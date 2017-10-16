@@ -12,6 +12,8 @@ var sprite = Sprite.new()
 var shape = CollisionShape2D.new()
 
 export(int,0,3) var key_type = 0 setget _set_key_type
+export var new_jump_force = 400
+export var time_to_off = 10
 
 var item_type = "jump_powerup"
 
@@ -37,6 +39,8 @@ func _enter_tree():
 	sh.set_radius(6)	
 	shape.set_shape(sh)	
 	set('key_type', key_type)
+	set('new_jump_force', new_jump_force)
+	set('time_to_off', time_to_off)
 	
 # pickup item method which is called from area detector assigned on player
 func PowerUpJump():	

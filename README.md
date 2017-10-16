@@ -36,4 +36,7 @@ Platformer2D game prototype/template
 
 - die
 - pull/push
+- enemies
+- add check if any powerup is executed
+- add option for use only one powerup in time
 - ...

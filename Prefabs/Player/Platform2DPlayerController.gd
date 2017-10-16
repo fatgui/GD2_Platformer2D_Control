@@ -103,24 +103,36 @@ func _on_TriggerDetector_area_enter( area ):
 		
 	# Pickup timelimited jump force
 	if area.has_method('PowerUpJump'):
-		area.PowerUpJump()
+		
+		# setup powerup
 		var jump = powerup_jump.instance()
 		var container =  Utils.find_node("Container")
-		jump.Start(move,container,10,430)
+		jump.Start(move,container,area.time_to_off,area.new_jump_force)
+		
+		# remove powerup
+		area.PowerUpJump()
 
 	# Pickup timelimited speed 
-	if area.has_method('PowerUpSpeed'):
-		area.PowerUpSpeed()
+	if area.has_method('PowerUpSpeed'):		
+		
+		# setup powerup
 		var speed = powerup_speed.instance()
 		var container =  Utils.find_node("Container")
-		speed.Start(move,container,10,playerMaxSpeed+50)
+		speed.Start(move,container,area.time_to_off,area.new_speed)
+		
+		# remove powerup
+		area.PowerUpSpeed()
 	
 	# Pickup timelimited gravity 
 	if area.has_method('PowerUpGravity'):
-		area.PowerUpGravity()
+		
+		# setup powerup
 		var grav = powerup_gravity.instance()
 		var container =  Utils.find_node("Container")
-		grav.Start(move,container,10,Vector2(0,500))
+		grav.Start(move,container,area.time_to_off,area.new_gravity)
+		
+		# remove powerup
+		area.PowerUpGravity()
 		
 func _on_TriggerDetector_area_exit( area ):
 	

@@ -12,6 +12,8 @@ var sprite = Sprite.new()
 var shape = CollisionShape2D.new()
 
 export(int,0,3) var key_type = 0 setget _set_key_type
+export var new_gravity = Vector2(0,1000);
+export var time_to_off = 10
 
 var item_type = "gravity_powerup"
 
