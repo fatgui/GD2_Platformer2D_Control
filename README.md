@@ -2,6 +2,8 @@
 
 Platformer2D game prototype/template
 
+![alt text](https://www.dropbox.com/s/kff8wko09v30ve8/AGFX_Platform2D_screen1.PNG?dl=0)
+
 # Features:
 
 - class for move horizontraly
