@@ -13,8 +13,6 @@ smoothSpeed = 0.1
 
 [node name="Level_0" parent="." instance=ExtResource( 2 )]
 
-editor/display_folded = true
-
 [node name="Player" parent="." instance=ExtResource( 3 )]
 
 editor/display_folded = true

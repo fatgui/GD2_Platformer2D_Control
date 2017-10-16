@@ -21,6 +21,10 @@ var move = null
 var anim = null
 var fire = null
 
+var powerup_jump = preload("res://Prefabs/PowerUps/PowerUpJump.tscn")
+var powerup_speed = preload("res://Prefabs/PowerUps/PowerUpSpeed.tscn")
+var powerup_gravity = preload("res://Prefabs/PowerUps/PowerUpGravity.tscn")
+
 # bullet prefab for firing
 onready var bullet_prefab = preload("res://Prefabs/Bullet/Bullet.tscn")
 
@@ -69,7 +73,7 @@ func _fixed_process(delta):
 	
 	# realize platformer movement
 	move.Apply(delta)
-	move.SetJumpForce(450)
+	
 	# get animation state and store result to global variable for easy access from any code
 	var playerAnimState = anim.GetState(move)
 	
@@ -96,10 +100,32 @@ func _on_TriggerDetector_area_enter( area ):
 	# teleport to target when player press 'key_up'
 	if area.has_method('Teleport'):
 		area.Teleport(player)
+		
+	# Pickup timelimited jump force
+	if area.has_method('PowerUpJump'):
+		area.PowerUpJump()
+		var jump = powerup_jump.instance()
+		var container =  Utils.find_node("Container")
+		jump.Start(move,container,10,430)
 
-
+	# Pickup timelimited speed 
+	if area.has_method('PowerUpSpeed'):
+		area.PowerUpSpeed()
+		var speed = powerup_speed.instance()
+		var container =  Utils.find_node("Container")
+		speed.Start(move,container,10,playerMaxSpeed+50)
+	
+	# Pickup timelimited gravity 
+	if area.has_method('PowerUpGravity'):
+		area.PowerUpGravity()
+		var grav = powerup_gravity.instance()
+		var container =  Utils.find_node("Container")
+		grav.Start(move,container,10,Vector2(0,500))
+		
 func _on_TriggerDetector_area_exit( area ):
 	
 	# reset teleport to target when player exit from area and key wasn't pressed
 	if area.has_method('ResetTeleport'):
 		area.ResetTeleport()
+		
+		

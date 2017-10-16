@@ -13,7 +13,7 @@ var shape = CollisionShape2D.new()
 
 export(int,0,3) var key_type = 0 setget _set_key_type
 
-var item_type = "jump_powerup"
+var item_type = "gravity_powerup"
 
 # recreate selection gizmo to sprite size
 func _get_item_rect():
@@ -22,7 +22,7 @@ func _get_item_rect():
 # set property
 func _set_key_type( value ):
 	var type = clamp(value, 0, 3)
-	var tex = load(path+'Jump_'+str(type)+'.png')
+	var tex = load(path+'Gravity_'+str(type)+'.png')
 	key_type = type
 	if sprite:
 		sprite.set_texture(tex)
@@ -39,5 +39,5 @@ func _enter_tree():
 	set('key_type', key_type)
 	
 # pickup item method which is called from area detector assigned on player
-func PowerUpJump():	
+func PowerUpGravity():	
 	queue_free()

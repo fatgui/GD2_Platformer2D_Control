@@ -9,28 +9,31 @@ Prototype for Platform2D player controller with animation for use in 2D platform
 - class for input event
 - class for shooting
 - class for Platformer2D movement
-- class for animation state checker by from assigned Platformer2D movement instance
+    - move left
+    - move right
+    - move jump
+    - move fall
+    - move pickup
+- class for animation state checker by assigned Platformer2D movement instance
 - collision check is included inside classes
 - play animation
 - move viewport by player position with smooth transition ON/OFF
 - player facing by movement direction
-- improved Tileset addon (organize now tileset in scene as in texture and set resource path to image)
+- improved Tileset addon (organize tileset in scene now as in texture and set resource path to image)
 - save/load inventory data to file
-- teleport from to (is defined as NODE)
+- teleport from/to (is defined as NODE) via target name of second teleport node
 - pickup coins (is defined as NODE)
 - pickup ammo (is defined as NODE)
 - pickup healt (is defined as NODE)
+- pickup time limited powerUp jump modifier 
+- pickup time limited powerUp gravity modifier 
+- pickup time limited powerUp speed modifier 
 - example for simple top-down movement
 - example for Platformer2D movement
-    - left
-    - right
-    - jump
-    - fall
+
     
 # ToDo:
 
 - die
-- climb
 - pull/push
-- double jump
 - ...
