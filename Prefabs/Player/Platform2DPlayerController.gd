@@ -87,11 +87,15 @@ func _exit_tree():
 	
 
 func _on_TriggerDetector_area_enter( area ):
+	# pickup ITEM
 	if area.has_method('pickup'):
 		area.pickup()
-	if area.has_method('transport'):
-		area.transport(player)
+	# teleport to target
+	if area.has_method('Teleport'):
+		area.Teleport(player)
 
 
 func _on_TriggerDetector_area_exit( area ):
-	pass # replace with function body
+	# reet teleport to target
+	if area.has_method('ResetTeleport'):
+		area.ResetTeleport()

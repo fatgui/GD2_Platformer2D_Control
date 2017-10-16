@@ -54,12 +54,15 @@ func _enter_tree():
 	set('teleport_type', teleport_type)
 	
 # teleport to target area when key_use is pressed on player
-func transport(player):
+func Teleport(player):
 	print("teleportation ready")
 	set_process(true)
 	eventOwner = player
 	pass
 
+func ResetTeleport():
+	set_process(false)
+	
 func _process(delta):
 	if Input.is_action_pressed(key_name):		
 		set_process(false)
