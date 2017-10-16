@@ -1,6 +1,6 @@
 # GD2_Platformer2D_Control
 
-Prototype for Platform2D player controller with animation for use in 2D platformer games
+Platformer2D game prototype/template
 
 # Features:
 
@@ -13,7 +13,7 @@ Prototype for Platform2D player controller with animation for use in 2D platform
     - move right
     - move jump
     - move fall
-    - move pickup
+    - pickup
 - class for animation state checker by assigned Platformer2D movement instance
 - collision check is included inside classes
 - play animation
