@@ -18,7 +18,7 @@ var world_gravity = Vector2(0,1000)
 var jumpForce = 400
 var jumpTreshold = 0.2
 var isOnGround = false
-var inMoving = false;
+var inMotion = false
 var jumping = false
 
 
@@ -64,7 +64,7 @@ func Apply(delta):
 	velocity += world_gravity * delta
 	_jump_timer += delta 
 	movement = 0
-	inMoving = false
+	inMotion = false
 	
 	if key_1.Pressed(): 
 		movement = -1
@@ -93,10 +93,8 @@ func Apply(delta):
 		
 	if velocity.y > 0: 
 		jumping = false
-		inMoving = true;
-		
-	if velocity.x > 0:
-		inMoving = true;
+	
+	if velocity.y!=0 or velocity.x != 0: inMotion = true;
 	
 # -----------------------------------------------------------
 # Get last velocity vector

@@ -1,9 +1,5 @@
 extends Node
 
-
-# KEYs state
-#enum eInputKey { KEY_NONE, KEY_LEFT, KEY_RIGHT, KEY_UP, KEY_DOWN, KEY_PAUSE, KEY_FIRE, KEY_THROW, KEY_MELEE, KEY_JUMP, KEY_USE}
-
 # Movement facing state
 enum eFacing { TO_LEFT, TO_RIGHT}
 
@@ -18,3 +14,18 @@ enum eAnimState { IDLE, WALK, JUMP, FALL, DIE, HURT, CLIMB, OBSTACLE }
 var coins = 0;
 var health = 0;
 var items = {};
+
+# ---------------------------------------------------------------------------
+# GAME prefabs 
+# ---------------------------------------------------------------------------
+
+# teleport button info
+var teleport_button_info = preload("res://Prefabs/Entities/TeleportButtonInfo/TeleportButtonInfo.tscn")
+
+# powerups
+var powerup_jump = preload("res://Prefabs/PowerUps/PowerUpJump.tscn")
+var powerup_speed = preload("res://Prefabs/PowerUps/PowerUpSpeed.tscn")
+var powerup_gravity = preload("res://Prefabs/PowerUps/PowerUpGravity.tscn")
+
+# bullet prefab for firing
+onready var bullet_prefab = preload("res://Prefabs/Bullet/Bullet.tscn")

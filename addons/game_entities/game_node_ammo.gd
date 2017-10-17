@@ -11,7 +11,7 @@ var path = 'res://Sprites/Entities/'
 var sprite = Sprite.new()
 var shape = CollisionShape2D.new()
 
-export(int,0,3) var key_type = 0 setget _set_key_type
+export(int,0,3) var item_id = 0 setget _set_item_id
 
 export var item_type = "ammo"
 export var item_amount = 10
@@ -21,10 +21,10 @@ func _get_item_rect():
     return sprite.get_item_rect() # Notice this call does not start with
 
 # set property
-func _set_key_type( value ):
+func _set_item_id( value ):
 	var type = clamp(value, 0, 3)
 	var tex = load(path+'Ammo_'+str(type)+'.png')
-	key_type = type
+	item_id = type
 	if sprite:
 		sprite.set_texture(tex)
 		sprite.set_name("Item_"+item_type+"_"+str(type))
@@ -37,7 +37,7 @@ func _enter_tree():
 	var sh = CircleShape2D.new()
 	sh.set_radius(6)	
 	shape.set_shape(sh)	
-	set('key_type', key_type)
+	set('item_id', item_id)
 	
 # pickup item method which is called from area detector assigned on player
 func pickup():
