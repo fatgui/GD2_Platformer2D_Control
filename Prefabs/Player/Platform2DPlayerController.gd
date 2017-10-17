@@ -68,7 +68,12 @@ func _ready():
 	Inventory.Set('coins',0);
 	Inventory.Set('health',100);
 	Inventory.Set('ammo',100);
+	Inventory.Set('key_A',false);
+	Inventory.Set('key_B',false);
+	Inventory.Set('key_C',false);
+	Inventory.Set('key_D',false);
 	
+	Inventory.Save()
 	
 func _fixed_process(delta):
 	
@@ -99,6 +104,10 @@ func _on_TriggerDetector_area_enter( area ):
 	# pickup ITEM
 	if area.has_method('pickup'):
 		area.pickup()
+		
+	# pickup KEY
+	if area.has_method('PickupKey'):
+		area.PickupKey()
 		
 	# teleport to target when player press 'key_up'
 	if area.has_method('Teleport'):

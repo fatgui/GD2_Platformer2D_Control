@@ -10,6 +10,7 @@ func _enter_tree():
 	add_custom_type("GAME_JumpPowerUp", "Area2D", load(path+'game_node_jump_powerup.gd'), load(path+'game_node_icon_jump_powerup.png'))
 	add_custom_type("GAME_SpeedPowerUp", "Area2D", load(path+'game_node_speed_powerup.gd'), load(path+'game_node_icon_speed_powerup.png'))
 	add_custom_type("GAME_GravityPowerUp", "Area2D", load(path+'game_node_gravity_powerup.gd'), load(path+'game_node_icon_gravity_powerup.png'))
+	add_custom_type("GAME_Key", "Area2D", load(path+'game_node_key.gd'), load(path+'game_node_icon_key.png'))
 	
 func _exit_tree():
 	remove_custom_type("GAME_Coin")

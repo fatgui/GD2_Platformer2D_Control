@@ -49,3 +49,8 @@ func Del(itemName):
 		
 func Set(itemName,val):
 	items[itemName] = val
+	
+func HasItem(itemName,val):
+	if items[itemName] == val:
+		return true
+	return false

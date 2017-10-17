@@ -42,6 +42,18 @@ new_speed = 200
 
 new_gravity = Vector2( 0, 500 )
 
+[node name="GAME_Key" parent="Level_0/GameEntities"]
+
+item_type = "key_B"
+
+[node name="GAME_Teleport_B2" parent="Level_0/GameEntities"]
+
+need_key = "key_B"
+
+[node name="GAME_Teleport_B1" parent="Level_0/GameEntities"]
+
+need_key = "key_B"
+
 [node name="Player" parent="." instance=ExtResource( 3 )]
 
 editor/display_folded = true

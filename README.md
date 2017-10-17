@@ -23,9 +23,10 @@ Platformer2D game prototype/template
 - player facing by movement direction
 - improved Tileset addon (organize tileset in scene now as in texture and set resource path to image)
 - save/load inventory data to file
-- teleport from/to (is defined as NODE) via target name of second teleport node
+- teleport from/to (is defined as NODE) via target name of second teleport node with option for requested key
 - pickup coins (is defined as NODE)
 - pickup ammo (is defined as NODE)
+- pickup key (is defined as NODE)
 - pickup healt (is defined as NODE)
 - pickup time limited powerUp jump modifier 
 - pickup time limited powerUp gravity modifier 
@@ -44,7 +45,10 @@ Platformer2D game prototype/template
         - pickup powerup strong jump 10 sec.
         - pickup powerup bigger speed
         - pickup powerup gravity vector (0,500)
-        - teleport to seconf linked teleport by name
+        - teleport to second linked teleport by name
+        - pickup key
+        - teleport with requested key
+        - show info when player enter to teleport area
 
     
 # ToDo:

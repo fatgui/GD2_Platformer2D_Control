@@ -19,6 +19,7 @@ export(int,0,3) var teleport_type = 0 setget _set_teleport_type
 
 export var target_name = "Teleport_B"
 export var key_name = "key_up"
+export var need_key = "none"
 
 # recreate selection gizmo to sprite size
 func _get_item_rect():
@@ -55,8 +56,9 @@ func _enter_tree():
 	
 # teleport to target area when key_use is pressed on player
 func Teleport(player):
-	print("teleportation ready")
-	set_process(true)
+	if need_key=="none": set_process(true)
+	if need_key!="none" and get_node("/root/Inventory").HasItem(need_key,true): set_process(true)
+		
 	eventOwner = player
 	pass
 
@@ -69,9 +71,7 @@ func _process(delta):
 		set_process(false)
 		var target_node = self.find_node(target_name)
 		var target_pos = target_node.get_node(target_name+"_Spawn")		
-		var pos = target_pos.get_global_pos()
-		
-		print("start teleportation to " + target_pos.get_name()+" at "+str(pos))
+		var pos = target_pos.get_global_pos()		
 		eventOwner.set_pos(pos)
 	pass
 
